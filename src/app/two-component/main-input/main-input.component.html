@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <h3>Write and add to belowe part</h3>
+    <label for="">server Name</label>
+    <!-- <input type="text" [(ngModel)]="serverName" /> -->
+    <input type="text" #serverNamee />
+    <label for="">server Content</label>
+    <!-- <input type="text" [(ngModel)]="serverContent" /> -->
+    <input type="text" #serverContentInp />
+    <button class="btn btn-info col-3 mt-2" (click)="addBelowFun(serverNamee)">
+      Add server
+    </button>
+    <button class="btn btn-info col-3 mt-2 ms-1" (click)="addCopyBelowFun(serverNamee)">Add server copy</button>
+  </div>
+  
+</div>

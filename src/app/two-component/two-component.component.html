@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <app-main-input
+      class="mb-2"
+      (ADB)="addBelowFunParent($event)"
+      (ACB)="addCopyBelowFunParent($event)"
+    ></app-main-input>
+    <hr />
+    <app-main-show *ngFor="let serItem of serverItems" [serItemEL]="serItem">
+    </app-main-show>
+  </div>
+</div>

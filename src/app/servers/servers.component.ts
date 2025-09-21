@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { ServerComponent } from '../server/server.component';
+import { FormsModule } from '@angular/forms';
+import { NgIf, NgStyle,NgForOf } from '@angular/common';
+
 // selector: 'app-servers',
 // را میتوان به 3 روش صدا زد
 // 1-----selector: 'app-servers', --------- <app-servers></app-servers>
@@ -24,7 +27,7 @@ import { ServerComponent } from '../server/server.component';
   // selector: 'app-servers',
   // selector: '[app-servers]',
   selector: '.app-servers',
-  imports: [ServerComponent],
+  imports: [ServerComponent, FormsModule, NgIf, NgStyle, NgForOf],
   templateUrl: './servers.component.html',
   // styleUrl: './servers.component.css'
   // styleUrls: ['./servers.component.css']
@@ -42,14 +45,36 @@ import { ServerComponent } from '../server/server.component';
 // قرار میگیره و متغیری که در کلاس تعریف کردیم درون
 // ""
 // قرار میگیره
-
 export class ServersComponent {
-    accountImg = 'images/account.png';
-    isAllowed = false
+  accountImg = 'images/account.png';
+  isAllowed = false;
+  ngModelName: string = '';
+  showNGIF: boolean = false;
+  serversArr: string[] = [];
+  constructor() {
+    setTimeout(() => {
+      return (this.isAllowed = true);
+    }, 2000);
+  }
+  clickFunctionBinding() {
+    console.log('you clicked');
+  }
 
-    constructor(){
-      setTimeout(() => {
-        return this.isAllowed=true
-      }, 2000);
-    }
+  keypressFunction(event: KeyboardEvent) {
+    let value = (event.target as HTMLInputElement).value;
+    console.log(value);
+  }
+
+  keypressEnterFunction(event: Event) {
+    let value = (event.target as HTMLInputElement).value;
+    console.log(value);
+  }
+  setShowNGIFFunc() {
+    console.log('ok');
+    this.showNGIF = true;
+  }
+  clickFunctionAdd() {
+    this.showNGIF = true;
+    this.serversArr.push('sample strng text');
+  }
 }
