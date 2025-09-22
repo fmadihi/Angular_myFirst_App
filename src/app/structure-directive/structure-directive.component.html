@@ -1,0 +1,40 @@
+<!-- 
+بعد از 5 ثانیه که المان حذف میشه
+المان بعدی جای ان را بگیرد. 
+المان دوم نمایش داده نمیشود و بعد از 5 ثانیه نمایش داده میشود 
+
+باید از متغیر لوکال استفاده کنیم اینجا:  showElem
+قبل از ان هر کلمه ای که دوست داشتی مینویس و فقز در فایل تایپ اسکریپت
+باید ان را به انتهای دکوراتیو اضافه کنی
+و حتما باید حرف اول آن بزرگ باشد
+
+@Input('hideStructurTempViewAfterThat') showElem: TemplateRef<any>
+    
+گرفتن چند مقدار با دایرکتیو
+<div *logName="'Mohammad' after 'ALi' theEnd 'akbar'">
+
+در اینجا بعد از ابتدا مقادیر خالیست و بعد از 5 ثانیه که لود شود مقادیر را نشان خواهد داد
+-->
+<main>
+  <section>
+    <h2>Structural Directives</h2>
+    <div *hideStructurTempView="5000; afterThat: showElem">
+      <h3>Temporary Content</h3>
+      <p>this layout should disapear in 5 seconds</p>
+    </div>
+
+    <ng-template #showElem>
+      <div *logName="'Mohammad'; after: 'ALi'; theEnd: 'akbar'">
+        <h3>Property Directives ----</h3>
+        <p>this layout should disapear in 5 seconds</p>
+      </div>
+    </ng-template>
+  </section>
+
+  <span [ngSwitch]="numb">
+    <p *ngSwitchCase="4">num is 4</p>
+    <p *ngSwitchCase="40">num is 40</p>
+    <p *ngSwitchCase="400">num is 400</p>
+    <p *ngSwitchDefault>default value</p>
+  </span>
+</main>

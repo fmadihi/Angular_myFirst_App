@@ -28,7 +28,7 @@
           *ngFor="let even of evenNumber"
           [ngClass]="{ even: even % 2 == 0 }"
           [ngStyle]="{ border: even % 2 == 0 ? '2px solid green' : 'none' }"
-          appRenderBasicBackgroundHilighte
+          appRenderBasicBackgroundHilighte colorElDefault="red" backgrounDefault01="yellow"
         >
           {{ even }}
         </li>
