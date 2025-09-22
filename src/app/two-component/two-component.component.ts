@@ -32,4 +32,8 @@ export class TwoComponentComponent {
       content: addCopyBelowEvent.serverContent,
     });
   }
+
+  destroyFunc(){
+    this.serverItems.splice(0,1)
+  }
 }

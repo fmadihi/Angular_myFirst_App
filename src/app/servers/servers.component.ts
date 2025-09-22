@@ -45,7 +45,7 @@ import { NgIf, NgStyle,NgForOf } from '@angular/common';
 // قرار میگیره و متغیری که در کلاس تعریف کردیم درون
 // ""
 // قرار میگیره
-export class ServersComponent {
+export class ServersComponent  {
   accountImg = 'images/account.png';
   isAllowed = false;
   ngModelName: string = '';

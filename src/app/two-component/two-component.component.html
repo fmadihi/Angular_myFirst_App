@@ -6,7 +6,13 @@
       (ACB)="addCopyBelowFunParent($event)"
     ></app-main-input>
     <hr />
+    <button (click)="destroyFunc()">destroy</button>
     <app-main-show *ngFor="let serItem of serverItems" [serItemEL]="serItem">
+      <section #contentSetion>
+        <div>{{ serItem.type }}</div>
+        <div>{{ serItem.name }}</div>
+        <div>{{ serItem.content }}</div>
+      </section>
     </app-main-show>
   </div>
 </div>
