@@ -15,8 +15,8 @@
         <li
           class="list-group-item d-flex justify-content-between align-items-center"
           *ngFor="let odd of oddNumber"
-          [ngClass]="{odd:odd % 2 !=0 }"
-          [ngStyle]="{border: odd % 2 !=0 ? '2px solid red' : 'none'}"
+          [ngClass]="{ odd: odd % 2 != 0 }"
+          [ngStyle]="{ border: odd % 2 != 0 ? '2px solid red' : 'none' }"
         >
           {{ odd }}
         </li>
@@ -26,8 +26,9 @@
         <li
           class="list-group-item d-flex justify-content-between align-items-center"
           *ngFor="let even of evenNumber"
-          [ngClass]="{even:even % 2 ==0 }"
-          [ngStyle]="{border: even % 2 ==0 ? '2px solid green' : 'none'}"
+          [ngClass]="{ even: even % 2 == 0 }"
+          [ngStyle]="{ border: even % 2 == 0 ? '2px solid green' : 'none' }"
+          appRenderBasicBackgroundHilighte
         >
           {{ even }}
         </li>

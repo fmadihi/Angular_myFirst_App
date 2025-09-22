@@ -1,9 +1,10 @@
 import { NgClass, NgForOf, NgIf, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
+import { RenderBasicBackgroundHilighteDirective } from './customDirective/render-basic-background-hilighte.directive';
 
 @Component({
   selector: 'app-direktive',
-  imports: [NgForOf, NgIf, NgClass,NgStyle],
+  imports: [NgForOf, NgIf, NgClass,NgStyle,RenderBasicBackgroundHilighteDirective],
   templateUrl: './direktive.component.html',
   styleUrl: './direktive.component.css',
   // styles: [
