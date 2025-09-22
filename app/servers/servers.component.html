@@ -1,0 +1,49 @@
+<!-- نحوه تعریف دیتابایندیگ در اچ تی انم ال
+ [src]="accountImg"
+
+ event bining:
+ (click)="clickFunctionBinding()"
+ 
+-->
+<img [src]="accountImg" alt="" />
+<button
+  class="btn btn-primary"
+  [disabled]="!isAllowed"
+  (click)="clickFunctionBinding()"
+>
+  Wait...
+</button>
+<p>servers works!</p>
+<button
+  class="btn btn-info"
+  [disabled]="!isAllowed"
+  (click)="clickFunctionAdd()"
+>
+  Add
+</button>
+<app-server *ngFor="let item of serversArr"></app-server>
+<!-- <app-server></app-server>
+<app-server></app-server>
+<app-server></app-server> -->
+<input type="text" (keypress)="keypressFunction($event)" />
+
+<!-- وقتی اینتر زد تابع فراخونی میشه -->
+<input type="text" (keydown.enter)="keypressEnterFunction($event)" />
+
+<!-- استفاده از ngmodel -->
+
+<input type="text" [(ngModel)]="ngModelName" />
+<span>{{ ngModelName }}</span>
+
+<!-- directive
+در اینجا باید حتما قبل از اسم * قرار بدیم و با نوشتن 
+ng
+تمام دکوراتیو ها رو به ما نمایش میده
+دکوراتیور یعنی که این کد مخصوص به انگولار است و برای پیاده سازی منطق است و باهاش مثل 
+html
+برخورد نکن.
+پس * باید حتما اول آن باشد تا بفهمه این مخصوص انگولار است 
+-->
+<button class="btn btn-danger" (click)="setShowNGIFFunc()">directive</button>
+<div *ngIf="showNGIF">ngIf: now i true and you can see</div>
+<h3 [ngStyle]="{ backgroundColor: 'red' }">ngStyle</h3>

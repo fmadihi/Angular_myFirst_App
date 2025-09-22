@@ -1,0 +1,38 @@
+<div class="container !direction !spacing mt-3">
+  <div
+    class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|}"
+  >
+    <a
+      class="btn btn-primary btn-sm col-3"
+      href="#"
+      role="button"
+      (click)="onlyOdd = !onlyOdd"
+    >
+      only odd or even Numbers
+    </a>
+    <ul class="list-group">
+      <div *ngIf="onlyOdd">
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center"
+          *ngFor="let odd of oddNumber"
+          [ngClass]="{ odd: odd % 2 != 0 }"
+          [ngStyle]="{ border: odd % 2 != 0 ? '2px solid red' : 'none' }"
+        >
+          {{ odd }}
+        </li>
+      </div>
+
+      <div *ngIf="!onlyOdd">
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center"
+          *ngFor="let even of evenNumber"
+          [ngClass]="{ even: even % 2 == 0 }"
+          [ngStyle]="{ border: even % 2 == 0 ? '2px solid green' : 'none' }"
+          appRenderBasicBackgroundHilighte
+        >
+          {{ even }}
+        </li>
+      </div>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <button class="col-3 btn btn-primary mt-2" (click)="changeIsShowParaFunc()">
+      نمایش جزئیات
+    </button>
+    <p *ngIf="isShowPara">passWord = codeyad123</p>
+    <!-- <p *ngFor="let item of textArray" [ngClass]="{ blueWhite: isBlueWhite }">
+      {{ item }}
+    </p> -->
+    <!-- <p *ngFor="let item of textArray" [ngClass]="{ blueWhite: item >= 5 }">
+      {{ item }}
+    </p> -->
+    <p *ngFor="let item of textArray , let i = index" [ngClass]="{ blueWhite: i >= 4 }">
+      {{ item }}
+    </p>
+  </div>
+</div>
