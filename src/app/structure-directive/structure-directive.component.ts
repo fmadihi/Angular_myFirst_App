@@ -8,7 +8,13 @@ import { UserService } from '../user.service';
   imports: [StructurTempViewDirective, NgSwitch, NgSwitchCase, NgSwitchDefault],
   templateUrl: './structure-directive.component.html',
   styleUrl: './structure-directive.component.css',
-  providers: [UserService],
+  // این کامنت شده است چون در کاپوننت اصلی 
+  // appcomponent.ts 
+  // فراخونی شده است. 
+  // اگر بخواهیم این سرویس فقط اینجاا استفاد خودش را داشته باشد و مقادیر کامپوننت اصلی را نگیرد کافیست که 
+  // خط زیر را از کامنت در بیاریم
+  // اونوقت این سرویس اینجا محنصر به فرد خواهد شد
+  // providers: [UserService],
 })
 export class StructureDirectiveComponent {
   numb: number = 4;

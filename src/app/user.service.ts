@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
+import { LoggerService } from './logger.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
   nameList = ['mohammad'];
-  constructor() {}
+  constructor(private logger:LoggerService) {
+    logger.LogMassage()
+  }
   getData() {
     console.log('user service from getdata');
   }
